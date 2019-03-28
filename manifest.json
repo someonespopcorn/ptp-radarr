@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "PTPRadarr",
+  "version": "0.1",
+
+  "description": "Adds direct integration to a Radarr server from PTP",
+  "permissions": ["storage", "https://*/"],
+
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  }
+}
