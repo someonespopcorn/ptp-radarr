@@ -45,3 +45,30 @@ function loadSelectorWithDefault(selector_id, storage_id, name_key, value_key, d
         setSelectedValue(selector_id, res[default_value_storage_key]);
     });
 }
+
+function timeSeconds() {
+    return (new Date()).getTime() / 1000;
+}
+
+
+function isFullyConfigured(yes, no) {
+    const keys = [
+        'radarr_base_url',
+        'radarr_api_key',
+        'quality_profiles',
+        'root_folders',
+        'default_quality_profile',
+        'default_root_folder'
+    ];
+    let options = keys.reduce(function(map, obj) {
+        map[obj] = '';
+        return map;
+    }, {});
+    chrome.storage.sync.get(options, (res) => {
+        if (Object.values(res).every((x) => x !== '')) {
+            yes(res);
+        } else {
+            no(res);
+        }
+    });
+}

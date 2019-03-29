@@ -6,6 +6,18 @@
   "description": "Adds direct integration to a Radarr server from PTP",
   "permissions": ["storage", "https://*/"],
 
+  "content_scripts": [
+    {
+      "matches": ["https://passthepopcorn.me/torrents.php*"],
+      "js": [
+        "utils.js",
+        "radarr_api.js",
+        "radarr_cache.js",
+        "movie_detail_page.js"
+      ]
+    }
+  ],
+
   "options_ui": {
     "page": "options.html",
     "browser_style": true

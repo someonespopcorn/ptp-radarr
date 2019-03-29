@@ -65,7 +65,6 @@ function testConnection() {
     });
 }
 
-
 document.addEventListener('DOMContentLoaded', restoreOptions, false);
 document.querySelector("#radarr_auth_button").addEventListener("click", saveAuthOptions);
 document.querySelector("#test_connection").addEventListener("click", testConnection);
