@@ -50,6 +50,12 @@ function timeSeconds() {
     return (new Date()).getTime() / 1000;
 }
 
+function thunkify(f, args) {
+    return () => {
+        f(...args);
+    }
+}
+
 
 function isFullyConfigured(yes, no) {
     const keys = [
