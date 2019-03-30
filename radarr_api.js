@@ -57,7 +57,8 @@ function radarr_movie_add(movie, monitor, search, success, failure) {
                 monitored: monitor
             };
             if (search) {
-                options["searchForMovie"] = true;
+                options["addOptions"] = {};
+                options["addOptions"]["searchForMovie"] = true;
             }
 
             base_radarr_request("/api/movie", "POST", options, success, failure);

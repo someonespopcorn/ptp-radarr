@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "PTPRadarr",
-  "version": "0.1",
+  "version": "0.2",
   "browser_specific_settings": {
     "gecko": {
       "id": "nota@real.email",
