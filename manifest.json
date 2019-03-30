@@ -2,6 +2,12 @@
   "manifest_version": 2,
   "name": "PTPRadarr",
   "version": "0.1",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "nota@real.email",
+      "strict_min_version": "0.1"
+    }
+  },
 
   "description": "Adds direct integration to a Radarr server from PTP",
   "permissions": ["storage", "https://*/"],

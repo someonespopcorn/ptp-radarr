@@ -1,28 +1,28 @@
 const split = document.querySelector("#imdb-title-link").href.split("/");
 const imdbId = split[split.length - 2];
 
-function addLinkToElement(element, movie, search) {
+function addLinkToElement(element, movie, search, success_message, error_message) {
     element.href = "#";
     element.onclick = thunkify(radarr_movie_add, [
         movie,
         true,
         search,
         function () {
-            alert('Movie added successfully');
+            alert(success_message);
             updateCache();
         },
         function () {
-            alert('Error adding movie');
+            alert(error_message);
         }
     ]);
 }
 
 function addAddLink(element, movie) {
-    addLinkToElement(element, movie, false);
+    addLinkToElement(element, movie, false, "Successfully Added Movie", "An Error Occurred");
 }
 
 function addSearchLink(element, movie) {
-    addLinkToElement(element, movie, true);
+    addLinkToElement(element, movie, true, "Successfully Searched Movie", "An Error Occurred");
 }
 
 function setupLinks(movie) {
